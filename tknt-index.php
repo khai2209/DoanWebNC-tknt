@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,15 +6,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiết Kế Nhà Đẹp, Thiết Kế Thi Công Nội Thất Và Xây Dưng Công Trình</title>
-    <link rel="stylesheet" href="./styles/tknt-style.css?v=3">
+    <link rel="stylesheet" href="./styles/tknt-style.css?v=2">
     <script src="https://kit.fontawesome.com/f2a961c991.js" crossorigin="anonymous"></script>
-    <script src="./js/scrip.js?v=1"></script>
+    <script src="./js/scrip.js?v=2"></script>
+    <script src="./js/loadmore.js?v=2"></script>
 </head>
 
 <body>
 
     <!-- Header -->
     <div class="main">
+
         <header id="header">
             <div class="navbar">
                 <a href="">
@@ -181,27 +182,31 @@
 
                     </div>
 
-                    <div class="content-wrap__b1">
-                        <h2>Bảng giá thiết kế, trang trí nội thất tại AZ tech</h2>
-                        <p>
-                            Bảng giá mà chúng tôi cung cấp tới cho Khách hàng là khác nhau ở mỗi công trình. Bảng giá cụ
-                            thể, chi tiết phụ thuộc vào rất nhiều yếu tố như: diện tích thiết kế, chất liệu nội thất, …
-                        </p>
-                        <img class="content-wrap__img padding-tb" src="./imgs/content-img__tknt2.png" alt="">
-                        <img class="content-wrap__img padding-tb" src="./imgs/content-img__tknt3.png" alt="">
-                        <p>
-                            NHÀ ĐẸP 6D luôn đảm bảo giá thành trong các thiết kế luôn cạnh tranh, giúp bạn sở hữu những
-                            mẫu thiết kế nội thất hiện đại, đẹp nhất với chi phí tối ưu.
-                        </p>
-                    </div>
-
-                    <div class="content-wrap__b1">
-                        <h2></h2>
-
+                    <div class="load-more-text" id="hidenText">
+                        <div class="content-wrap__b1">
+                            <h2>Bảng giá thiết kế, trang trí nội thất tại AZ tech</h2>
+                            <p>
+                                Bảng giá mà chúng tôi cung cấp tới cho Khách hàng là khác nhau ở mỗi công trình. Bảng giá cụ
+                                thể, chi tiết phụ thuộc vào rất nhiều yếu tố như: diện tích thiết kế, chất liệu nội thất, …
+                            </p>
+                            <img class="content-wrap__img padding-tb" src="./imgs/content-img__tknt2.png" alt="">
+                            <img class="content-wrap__img padding-tb" src="./imgs/content-img__tknt3.png" alt="">
+                            <p>
+                                NHÀ ĐẸP 6D luôn đảm bảo giá thành trong các thiết kế luôn cạnh tranh, giúp bạn sở hữu những
+                                mẫu thiết kế nội thất hiện đại, đẹp nhất với chi phí tối ưu.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
+                <div id="load-more">
+                    <div class="load-more">
+                        <button type="button" id= "loadmoreBtn"class="load-more-btn">Xem thêm</button>
+                    </div>
+                </div>
             </div>
+
+
         </div>
 
         <!-- Nội dung -->
@@ -252,20 +257,20 @@
                                 <div class="form__col">
                                     <label class="color-fff padding-tb margin-top font-bold" for="fullname">Họ và
                                         tên</label>
-                                    <input type="text" name="fullname" id="input1" class="input">
+                                    <input type="text" name="fullname" id="input1">
                                     <span class="form-message" style="color:#FF323C; font-size:16px; padding-top: 5px;font-weight:500;"></span>
                                 </div>
                                 <div class="form__col">
                                     <label class="color-fff padding-tb margin-top font-bold" for="phone">Điện
                                         thoại</label>
-                                    <input type="text" name="phone" id="input2" class="input">
+                                    <input type="text" name="phone" id="input2">
                                     <span class="form-message" style="color:#FF323C; font-size:16px; padding-top: 5px;font-weight:500;"></span>
 
                                 </div>
                             </div>
                             <div class="form-col">
                                 <label class="color-fff padding-tb margin-top font-bold" for="address">Địa chỉ</label>
-                                <input type="text" name="address" id="input3" class="input">
+                                <input type="text" name="address" id="input3">
                                 <span class="form-message" style="color:#FF323C; font-size:16px; padding-top: 5px;font-weight:500;"></span>
 
                                 <label class="color-fff padding-tb margin-top font-bold" for="content">Nội dung anh chị
@@ -281,22 +286,22 @@
         </div>
 
         <script>
-            
-                Validator({
-                    form: '#form-dang-ky',
-                    errorSelector: '.form-message',
-                    rules: [
-                        Validator.isRequired('#input1'),
-                        Validator.isName('#input1'),
-                        Validator.isRequired('#input2'),
-                        Validator.isPhone('#input2'),
-                        Validator.isRequired('#input3'),
-                        Validator.isRequired('#input5')
-                    ],
-                    onSubmit: function(data) {
-                        console.log(data);
-                    }
-                });
+            Validator({
+                form: '#form-dang-ky',
+                errorSelector: '.form-message',
+                formGroupSelector: ['.form-col', '.form__col'],
+                rules: [
+                    Validator.isRequired('#input1'),
+                    Validator.isName('#input1'),
+                    Validator.isRequired('#input2'),
+                    Validator.isPhone('#input2'),
+                    Validator.isRequired('#input3')
+                ],
+                onSubmit: function(formValues) {
+                    console.log(formValues); // In dữ liệu biểu mẫu vào console để kiểm tra
+                    // Thực hiện gửi dữ liệu đến reg.php hoặc xử lý dữ liệu theo yêu cầu của bạn
+                }
+            });
         </script>
 
 

@@ -42,12 +42,21 @@ function Validator(options) {
                     isFormValid = false;
                 }
             });
-            var enableInputs = formElement.querySelectorAll('[name]');
-            console.log(enableInputs);
+
             if (isFormValid) {
-                if (typeof options.onSubmit == 'function') {
-                    options.onSubmit({
-                    })
+                // sbmit với JS
+                if (typeof options.onSubmit === 'function') {
+                    var enableInputs = formElement.querySelectorAll('[name], textarea[name]');
+
+                    var formValues = Array.from(enableInputs).reduce(function (values, input) {
+                        values[input.name] = input.value;
+                        return values;
+                    }, {});
+                    options.onSubmit(formValues);
+                } 
+                // sbmit với hành vi mặc định
+                else {
+                    formElement.submit();
                 }
             }
 
@@ -68,7 +77,7 @@ function Validator(options) {
                 }
                 // Khi người dùng nhập vào input
                 inputElement.oninput = function () {
-                    var errorElement = inputElement.parentElement.querySelector(options.errorSelector);
+                    var errorElement = inputElement.nextElementSibling;
                     errorElement.innerText = '';
                     inputElement.classList.remove('invalid');
                 }
@@ -106,43 +115,6 @@ Validator.isPhone = function (selector) {
     }
 }
 
-// Validator.isName = function (selector) {
-//     return {
-//         selector: selector,
-//         test: function (value) {
-//             var regex = /^[\p{L}\s]+$/u;
-//             if (value === undefined || value.trim() === '') {
-//                 return 'Vui lòng không để trống';
-//             }
-//             if (regex.test(value)) {
-//                 return undefined;
-//             } else {
-//                 return 'Tên không đúng định dạng';
-//             }
-//         }
-//     }
-// }
-
-// Validator.isPhone = function (selector) {
-//     return {
-//         selector: selector,
-//         test:
-
-//             function (value) {
-//                 var regex = /^\d{10}$/;
-//                 if (value === undefined || value.trim() === '') {
-//                     return 'Vui lòng không để trống';
-//                 }
-//                 if (regex.test(value)) {
-//                     return undefined;
-//                 } else {
-//                     return 'Số điện thoại không đúng định dạng';
-//                 }
-
-//             }
-
-//     }
-// }
 
 
 
