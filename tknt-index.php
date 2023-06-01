@@ -1,15 +1,15 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thiết Kế Nhà Đẹp, Thiết Kế Thi Công Nội Thất Và Xây Dưng Công Trình</title>
-    <link rel="stylesheet" href="./styles/tknt-style.css?v=2">
+    <link rel="stylesheet" href="./styles/tknt-style.css?v=1">
     <script src="https://kit.fontawesome.com/f2a961c991.js" crossorigin="anonymous"></script>
-    <script src="./js/scrip.js?v=2"></script>
-    <script src="./js/loadmore.js?v=2"></script>
+    <script src="./js/scrip.js?v=1"></script>
+    <script src="./js/loadmore.js?v=1"></script>
 </head>
 
 <body>
@@ -201,7 +201,7 @@
                 </div>
                 <div id="load-more">
                     <div class="load-more">
-                        <button type="button" id= "loadmoreBtn"class="load-more-btn">Xem thêm</button>
+                        <button type="button" id="loadmoreBtn" class="load-more-btn">Xem thêm</button>
                     </div>
                 </div>
             </div>
@@ -251,33 +251,34 @@
                         <h3 class="container-text__h31">Đăng ký</h3>
                         <h3 class="container-text__h32">Nhận tư vấn miễn phí</h3>
                     </div>
+                    <!-- -->
                     <div class="container-form">
                         <form id="form-dang-ky" action="./php/reg.php" method="POST">
                             <div class="form-row">
                                 <div class="form__col">
                                     <label class="color-fff padding-tb margin-top font-bold" for="fullname">Họ và
                                         tên</label>
-                                    <input type="text" name="fullname" id="input1">
+                                    <input type="text" name="fullname" id="input1" placeholder="VD: Lưu Quang Khải">
                                     <span class="form-message" style="color:#FF323C; font-size:16px; padding-top: 5px;font-weight:500;"></span>
                                 </div>
                                 <div class="form__col">
                                     <label class="color-fff padding-tb margin-top font-bold" for="phone">Điện
                                         thoại</label>
-                                    <input type="text" name="phone" id="input2">
+                                    <input type="text" name="phone" id="input2" placeholder="VD: 0392857432">
                                     <span class="form-message" style="color:#FF323C; font-size:16px; padding-top: 5px;font-weight:500;"></span>
 
                                 </div>
                             </div>
                             <div class="form-col">
                                 <label class="color-fff padding-tb margin-top font-bold" for="address">Địa chỉ</label>
-                                <input type="text" name="address" id="input3">
+                                <input type="text" name="address" id="input3" placeholder="VD: Hà Nội">
                                 <span class="form-message" style="color:#FF323C; font-size:16px; padding-top: 5px;font-weight:500;"></span>
 
                                 <label class="color-fff padding-tb margin-top font-bold" for="content">Nội dung anh chị
                                     cần tư vấn</label>
                                 <textarea name="content" id="input4" cols="10" rows="8"></textarea>
                                 <span class="form-message" style="color:#FF323C; font-size:16px; padding-top: 5px;font-weight:500;"></span>
-                                <input type="submit" id="input-btn__dangky" name="btn-reg" value="Đăng ký">
+                                <input type="submit" id="input-btn__dangky" name="register" value="Đăng ký">
                             </div>
                         </form>
                     </div>
@@ -285,6 +286,9 @@
             </div>
         </div>
 
+       
+
+        <!-- validate -->
         <script>
             Validator({
                 form: '#form-dang-ky',
@@ -296,11 +300,7 @@
                     Validator.isRequired('#input2'),
                     Validator.isPhone('#input2'),
                     Validator.isRequired('#input3')
-                ],
-                onSubmit: function(formValues) {
-                    console.log(formValues); // In dữ liệu biểu mẫu vào console để kiểm tra
-                    // Thực hiện gửi dữ liệu đến reg.php hoặc xử lý dữ liệu theo yêu cầu của bạn
-                }
+                ]
             });
         </script>
 
@@ -435,7 +435,4 @@
     </div>
 
 </body>
-
-
-
 </html>
