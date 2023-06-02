@@ -1,3 +1,5 @@
+// load more
+
 document.addEventListener('DOMContentLoaded', function () {
     var loadmoreBtn = document.getElementById('loadmoreBtn');
     var hidenText = document.getElementById('hidenText');

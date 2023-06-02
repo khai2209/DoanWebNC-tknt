@@ -646,3 +646,45 @@ header .scroll-chat .animation-icon .pulseAnimation2 {
     padding: 30px 0;
     border-top: 1px solid #ccc;
 }
+
+
+
+
+/* REGISTER SUCCESS */
+#reg-main {
+    display: flex;
+    justify-content: center;
+}
+
+#reg-main .reg-container {
+    position: relative;;
+    height: 222px;
+    width: 444px;
+    background: linear-gradient(to bottom, #394d60, #85929E);
+    border: none;
+    border-radius: 1rem;
+}
+.reg-container .reg-btn__back {
+    position: absolute;
+    bottom: 2rem;
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.reg-container .reg-btn__back:hover {
+    opacity: 0.7;
+}
+.reg-container .reg-btn__back a{
+    color: #fff;
+    padding: 1rem;
+    background-color: #000;
+    border-radius: 1rem;
+    font-weight: 600;
+}
+
+.reg-container #message-success {
+    color: #fff;
+    font-size: 19px;
+    padding: 2.8rem;
+    font-weight: 600;
+    text-align: center;
+}

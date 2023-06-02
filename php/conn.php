@@ -8,5 +8,4 @@
     if ($conn->connect_error) {
         die("connect false".$conn->connect_error);
     }
-    echo "Kết nối thành công"."<br>";
 ?>
