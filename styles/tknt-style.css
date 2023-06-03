@@ -112,13 +112,13 @@ header .icon-back-top {
 
 header .icon-back-top i,
 header .icon-back-top p {
-    color: #9999;
-    font-weight: 700;
+    color: #999;
+    text-shadow: 0 0 #fff;
 }
 
 header .icon-back-top:hover i,
 header .icon-back-top:hover p {
-    color: #000;
+    color: #ff5722;
     transition: all 0.3s ease-in-out;
 }
 
@@ -596,6 +596,10 @@ header .scroll-chat .animation-icon .pulseAnimation2 {
 }
 
 /* Footer-top */
+.footer-container__top .item-body:last-child p {
+    padding: 6px 10px 0 10px;
+}
+
 .footer-container__top .item-body p,
 .footer-container__top .item-body ul li,
 .footer-container .footer-container__top .item-body {
