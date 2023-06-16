@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../styles/tknt-style.css">
+    <link rel="stylesheet" href="../styles/tknt-style.css?v=3">
+    <script src="https://kit.fontawesome.com/f2a961c991.js" crossorigin="anonymous"></script>
     <title>Success</title>
 </head>
 
@@ -25,7 +26,11 @@
                         $sql = "INSERT INTO `user` (`fullname`, `phone`, `address`, `content` ) values ('$fullname', '$phone', '$address', '$content')";
                         if ($conn->query($sql) === true) {
                             echo
-                            '<p id = "message-success">
+                            '
+                            <div class="icon-container">
+                            <i class="fa-solid fa-check fa-bounce fa-2xl icon-check"></i>
+                            </div>
+                            <p id = "message-success">
                 Bạn đã đăng ký nhận tư vấn thành công. Chúng tôi sẽ liên lạc với bạn trong vòng 24h tới.
             </p>';
                         } else {
@@ -34,12 +39,17 @@
                     }
                 }
 
+
                 ?>
             </div>
 
             <div class="reg-btn__back">
-                <a href="../tknt-index.php">Quay lại</a>
+                <a href="../index.html">Quay lại</a>
             </div>
+
+            <?php
+            require '../sendemail.php';
+            ?>
         </div>
     </div>
 

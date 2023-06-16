@@ -119,6 +119,7 @@ header .icon-back-top p {
 header .icon-back-top:hover i,
 header .icon-back-top:hover p {
     color: #ff5722;
+    border-radius: none;
     transition: all 0.3s ease-in-out;
 }
 
@@ -661,34 +662,61 @@ header .scroll-chat .animation-icon .pulseAnimation2 {
 }
 
 #reg-main .reg-container {
-    position: relative;;
+    position: relative;
     height: 222px;
     width: 444px;
-    background: linear-gradient(to bottom, #394d60, #85929E);
-    border: none;
+    background: #fff;
+    border: 1px solid #ccc;
     border-radius: 1rem;
+    box-shadow: 1px 1px 5px 1px;
+    margin-top: 5%
 }
-.reg-container .reg-btn__back {
-    position: absolute;
-    bottom: 2rem;
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
+ 
+
 .reg-container .reg-btn__back:hover {
     opacity: 0.7;
+    cursor: pointer;
 }
-.reg-container .reg-btn__back a{
-    color: #fff;
-    padding: 1rem;
-    background-color: #000;
+
+.reg-container .reg-btn__back {
+    display: flex;
+    width: 444px;
+    justify-content: center;
+    border-top: 1px solid #ccc;
+}
+
+.reg-container .reg-btn__back a {
+    display: inline-block;
+    color: #000;
     border-radius: 1rem;
     font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    width: 444px;
 }
 
 .reg-container #message-success {
-    color: #fff;
+    color: #000;
+    text-shadow: 0 0 #F5FF00;
     font-size: 19px;
-    padding: 2.8rem;
-    font-weight: 600;
+    padding: 15px 1rem 10px 1rem;
+    font-weight: 500;
     text-align: center;
+}
+
+.reg-container .icon-container {
+    position: relative;
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    margin-top: 20px;
+}
+.reg-container .icon-check {
+    color: green;
+    border: 1px solid green;
+    border-radius: 50%;
+    line-height: 50px;
+    width: 50px;
+    height: 50px;
+    
 }
