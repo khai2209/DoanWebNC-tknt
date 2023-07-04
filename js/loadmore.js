@@ -2,14 +2,14 @@
 
 document.addEventListener('DOMContentLoaded', function () {
     var loadmoreBtn = document.getElementById('loadmoreBtn');
-    var hidenText = document.getElementById('hidenText');
+    var hiddenText = document.getElementById('hiddenText');
     var originText = loadmoreBtn.innerText;
     loadmoreBtn.addEventListener('click', function() {
-        if(hidenText.style.display == 'block'){
-            hidenText.style.display = 'none';
+        if(hiddenText.style.display == 'block'){
+            hiddenText.style.display = 'none';
             loadmoreBtn.innerText = originText;
         } else {
-            hidenText.style.display = 'block';
+            hiddenText.style.display = 'block';
             loadmoreBtn.innerText = 'Thu gọn';
         }
     });

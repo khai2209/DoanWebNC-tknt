@@ -1,4 +1,5 @@
 <?php
+//DD;{1{&0#$4W
     $host = "localhost";
     $usename = "root";
     $password = "";
